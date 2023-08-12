@@ -14,7 +14,7 @@ const init = async() => {
     const res = await axios.get(`${TELEGRAM_API}/setWebhook?url=${WEBHOOK_URL}`);
     console.log(res.data);
 }
-
+  
 app.post(URI,async(req,res)=>{
     console.log(req.body)
     const chatId = req.body.message.chat.id;
@@ -27,7 +27,7 @@ app.post(URI,async(req,res)=>{
 }
 
 ) 
-app.listen(process.env.PORT || 5000, async()=>{
+app.listen(process.env.PORT || 5000, async()=> {
     console.log('app running');
     await init();
 })
